@@ -15,9 +15,13 @@
 		D7261983210716320069368A /* BikeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7261982210716320069368A /* BikeCell.swift */; };
 		D72619852107180A0069368A /* BikeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72619842107180A0069368A /* BikeTableViewController.swift */; };
 		D7261987210718D70069368A /* BikeStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7261986210718D70069368A /* BikeStation.swift */; };
+		E7D2714E9561C00FF609C48B /* Pods_Bikes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6D29E855C25F708F3C78BCD /* Pods_Bikes.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		33907309334CA44FDE896F19 /* Pods-Bikes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bikes.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bikes/Pods-Bikes.release.xcconfig"; sourceTree = "<group>"; };
+		5C1F1ED1B4EAC3C518511CF4 /* Pods-Bikes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bikes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bikes/Pods-Bikes.debug.xcconfig"; sourceTree = "<group>"; };
+		A6D29E855C25F708F3C78BCD /* Pods_Bikes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bikes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D726196B21070FBA0069368A /* Bikes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bikes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D726196E21070FBA0069368A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D726197321070FBA0069368A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -35,17 +39,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7D2714E9561C00FF609C48B /* Pods_Bikes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		43C5AAB3664F0A1F43A73C13 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5C1F1ED1B4EAC3C518511CF4 /* Pods-Bikes.debug.xcconfig */,
+				33907309334CA44FDE896F19 /* Pods-Bikes.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7084150B65395CF10995BC32 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A6D29E855C25F708F3C78BCD /* Pods_Bikes.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D726196221070FBA0069368A = {
 			isa = PBXGroup;
 			children = (
 				D726196D21070FBA0069368A /* Bikes */,
 				D726196C21070FBA0069368A /* Products */,
+				43C5AAB3664F0A1F43A73C13 /* Pods */,
+				7084150B65395CF10995BC32 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,9 +128,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D726197D21070FBA0069368A /* Build configuration list for PBXNativeTarget "Bikes" */;
 			buildPhases = (
+				5494CA9878AA8D82FE7B2AF4 /* [CP] Check Pods Manifest.lock */,
 				D726196721070FBA0069368A /* Sources */,
 				D726196821070FBA0069368A /* Frameworks */,
 				D726196921070FBA0069368A /* Resources */,
+				6930444B3D29E3502EA0A135 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -164,6 +190,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5494CA9878AA8D82FE7B2AF4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Bikes-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6930444B3D29E3502EA0A135 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Bikes/Pods-Bikes-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bikes/Pods-Bikes-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D726196721070FBA0069368A /* Sources */ = {
@@ -308,6 +373,7 @@
 		};
 		D726197E21070FBA0069368A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C1F1ED1B4EAC3C518511CF4 /* Pods-Bikes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -322,6 +388,7 @@
 		};
 		D726197F21070FBA0069368A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33907309334CA44FDE896F19 /* Pods-Bikes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
