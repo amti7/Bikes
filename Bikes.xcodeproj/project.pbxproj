@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		D726196F21070FBA0069368A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D726196E21070FBA0069368A /* AppDelegate.swift */; };
-		D726197121070FBA0069368A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D726197021070FBA0069368A /* ViewController.swift */; };
 		D726197421070FBA0069368A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D726197221070FBA0069368A /* Main.storyboard */; };
 		D726197621070FBA0069368A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D726197521070FBA0069368A /* Assets.xcassets */; };
 		D726197921070FBA0069368A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D726197721070FBA0069368A /* LaunchScreen.storyboard */; };
+		D7261981210711330069368A /* BikeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7261980210711330069368A /* BikeCell.xib */; };
+		D7261983210716320069368A /* BikeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7261982210716320069368A /* BikeCell.swift */; };
+		D72619852107180A0069368A /* BikeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72619842107180A0069368A /* BikeTableViewController.swift */; };
+		D7261987210718D70069368A /* BikeStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7261986210718D70069368A /* BikeStation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D726196B21070FBA0069368A /* Bikes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bikes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D726196E21070FBA0069368A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D726197021070FBA0069368A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D726197321070FBA0069368A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D726197521070FBA0069368A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D726197821070FBA0069368A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D726197A21070FBA0069368A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7261980210711330069368A /* BikeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BikeCell.xib; sourceTree = "<group>"; };
+		D7261982210716320069368A /* BikeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeCell.swift; sourceTree = "<group>"; };
+		D72619842107180A0069368A /* BikeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeTableViewController.swift; sourceTree = "<group>"; };
+		D7261986210718D70069368A /* BikeStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeStation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +61,40 @@
 			isa = PBXGroup;
 			children = (
 				D726196E21070FBA0069368A /* AppDelegate.swift */,
-				D726197021070FBA0069368A /* ViewController.swift */,
-				D726197221070FBA0069368A /* Main.storyboard */,
+				D726198A210719090069368A /* Model */,
+				D7261989210719000069368A /* Controller */,
+				D7261988210718F90069368A /* View */,
 				D726197521070FBA0069368A /* Assets.xcassets */,
 				D726197721070FBA0069368A /* LaunchScreen.storyboard */,
 				D726197A21070FBA0069368A /* Info.plist */,
 			);
 			path = Bikes;
+			sourceTree = "<group>";
+		};
+		D7261988210718F90069368A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D7261980210711330069368A /* BikeCell.xib */,
+				D726197221070FBA0069368A /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D7261989210719000069368A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D7261982210716320069368A /* BikeCell.swift */,
+				D7261986210718D70069368A /* BikeStation.swift */,
+				D72619842107180A0069368A /* BikeTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D726198A210719090069368A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +156,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7261981210711330069368A /* BikeCell.xib in Resources */,
 				D726197921070FBA0069368A /* LaunchScreen.storyboard in Resources */,
 				D726197621070FBA0069368A /* Assets.xcassets in Resources */,
 				D726197421070FBA0069368A /* Main.storyboard in Resources */,
@@ -136,7 +170,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D726197121070FBA0069368A /* ViewController.swift in Sources */,
+				D7261987210718D70069368A /* BikeStation.swift in Sources */,
+				D72619852107180A0069368A /* BikeTableViewController.swift in Sources */,
+				D7261983210716320069368A /* BikeCell.swift in Sources */,
 				D726196F21070FBA0069368A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
