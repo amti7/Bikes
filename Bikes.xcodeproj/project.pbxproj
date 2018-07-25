@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D70123002108BCAE005E2213 /* MapWithStationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70122FF2108BCAE005E2213 /* MapWithStationViewController.swift */; };
+		D70123022108FEE6005E2213 /* BikePlacemark.xib in Resources */ = {isa = PBXBuildFile; fileRef = D70123012108FEE6005E2213 /* BikePlacemark.xib */; };
+		D701230421090025005E2213 /* BikePlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = D701230321090025005E2213 /* BikePlacemark.swift */; };
 		D726196F21070FBA0069368A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D726196E21070FBA0069368A /* AppDelegate.swift */; };
 		D726197421070FBA0069368A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D726197221070FBA0069368A /* Main.storyboard */; };
 		D726197621070FBA0069368A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D726197521070FBA0069368A /* Assets.xcassets */; };
@@ -22,6 +25,9 @@
 		33907309334CA44FDE896F19 /* Pods-Bikes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bikes.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bikes/Pods-Bikes.release.xcconfig"; sourceTree = "<group>"; };
 		5C1F1ED1B4EAC3C518511CF4 /* Pods-Bikes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bikes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bikes/Pods-Bikes.debug.xcconfig"; sourceTree = "<group>"; };
 		A6D29E855C25F708F3C78BCD /* Pods_Bikes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bikes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D70122FF2108BCAE005E2213 /* MapWithStationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWithStationViewController.swift; sourceTree = "<group>"; };
+		D70123012108FEE6005E2213 /* BikePlacemark.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BikePlacemark.xib; sourceTree = "<group>"; };
+		D701230321090025005E2213 /* BikePlacemark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikePlacemark.swift; sourceTree = "<group>"; };
 		D726196B21070FBA0069368A /* Bikes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bikes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D726196E21070FBA0069368A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D726197321070FBA0069368A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -98,8 +104,11 @@
 		D7261988210718F90069368A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D7261982210716320069368A /* BikeCell.swift */,
 				D7261980210711330069368A /* BikeCell.xib */,
 				D726197221070FBA0069368A /* Main.storyboard */,
+				D70123012108FEE6005E2213 /* BikePlacemark.xib */,
+				D701230321090025005E2213 /* BikePlacemark.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -107,9 +116,8 @@
 		D7261989210719000069368A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D7261982210716320069368A /* BikeCell.swift */,
-				D7261986210718D70069368A /* BikeStation.swift */,
 				D72619842107180A0069368A /* BikeTableViewController.swift */,
+				D70122FF2108BCAE005E2213 /* MapWithStationViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -117,6 +125,7 @@
 		D726198A210719090069368A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D7261986210718D70069368A /* BikeStation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -184,6 +193,7 @@
 			files = (
 				D7261981210711330069368A /* BikeCell.xib in Resources */,
 				D726197921070FBA0069368A /* LaunchScreen.storyboard in Resources */,
+				D70123022108FEE6005E2213 /* BikePlacemark.xib in Resources */,
 				D726197621070FBA0069368A /* Assets.xcassets in Resources */,
 				D726197421070FBA0069368A /* Main.storyboard in Resources */,
 			);
@@ -238,6 +248,8 @@
 				D7261987210718D70069368A /* BikeStation.swift in Sources */,
 				D72619852107180A0069368A /* BikeTableViewController.swift in Sources */,
 				D7261983210716320069368A /* BikeCell.swift in Sources */,
+				D701230421090025005E2213 /* BikePlacemark.swift in Sources */,
+				D70123002108BCAE005E2213 /* MapWithStationViewController.swift in Sources */,
 				D726196F21070FBA0069368A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,7 +389,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Bikes/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kamil.Bikes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -392,7 +406,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Bikes/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kamil.Bikes;
 				PRODUCT_NAME = "$(TARGET_NAME)";

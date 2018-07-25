@@ -6,5 +6,5 @@ target 'Bikes' do
   use_frameworks!
 
   # Pods for Bikes
-  pod 'ObjectMapper', '~> 2.2.8’
+  pod 'ObjectMapper'
 end

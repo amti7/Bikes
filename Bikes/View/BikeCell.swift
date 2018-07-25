@@ -12,9 +12,7 @@ class BikeCell: UITableViewCell {
     
     @IBOutlet weak var idAndStateLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
-    @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var availableBikesLabel: UILabel!    
     @IBOutlet weak var availablePlacesLabel: UILabel!
-    
     
 }

@@ -6,9 +6,15 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Bike Table View Controller-->
         <scene sceneID="dJ5-xt-za9">
@@ -25,27 +31,132 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="47e-lh-xfd"/>
                     <connections>
-                        <segue destination="73K-aR-srF" kind="show" id="Ipq-3b-ues"/>
+                        <segue destination="73K-aR-srF" kind="show" identifier="ShowMapSegue" id="Ipq-3b-ues"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zdO-ww-mJz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="336.80000000000001" y="62.518740629685162"/>
         </scene>
-        <!--View Controller-->
+        <!--Map With Station View Controller-->
         <scene sceneID="ahZ-zL-klq">
             <objects>
-                <viewController id="73K-aR-srF" sceneMemberID="viewController">
+                <viewController id="73K-aR-srF" customClass="MapWithStationViewController" customModule="Bikes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w0K-uk-0Cr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ngd-Ju-Gdz">
+                                <rect key="frame" x="0.0" y="64" width="375" height="396"/>
+                            </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6N5-SL-toK">
+                                <rect key="frame" x="0.0" y="460" width="375" height="207"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOE-76-Xki">
+                                        <rect key="frame" x="16" y="48" width="92" height="14"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available bikes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nmZ-Pd-AC0">
+                                        <rect key="frame" x="38" y="124" width="112" height="14"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lockIcon" translatesAutoresizingMaskIntoConstraints="NO" id="mw5-e8-Ofb">
+                                        <rect key="frame" x="267" y="78" width="33" height="38"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="38" id="WUf-8k-Qtu"/>
+                                            <constraint firstAttribute="width" constant="33" id="cfw-uT-xP0"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="047 Ofiar Dąbia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPg-Vq-BXT">
+                                        <rect key="frame" x="16" y="9" width="343" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="31" id="Bi1-Qf-yBQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bikeIcon" translatesAutoresizingMaskIntoConstraints="NO" id="wLo-LR-jb0">
+                                        <rect key="frame" x="75" y="78" width="38" height="38"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="38" id="3Es-pG-wNJ"/>
+                                            <constraint firstAttribute="width" constant="38" id="NvZ-Yb-rne"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available places" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZVN-3h-Ckh">
+                                        <rect key="frame" x="227" y="124" width="112.5" height="14"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZO-8t-WZ9">
+                                        <rect key="frame" x="38" y="138" width="112.5" height="58.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
+                                        <color key="textColor" red="0.34564951059999999" green="0.70092934370000004" blue="0.56276082989999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTn-cR-bun">
+                                        <rect key="frame" x="227.5" y="138" width="112.5" height="58.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="cTn-cR-bun" firstAttribute="centerX" secondItem="mw5-e8-Ofb" secondAttribute="centerX" id="0sW-xb-0FB"/>
+                                    <constraint firstItem="cTn-cR-bun" firstAttribute="width" secondItem="6N5-SL-toK" secondAttribute="width" multiplier="0.3" id="1os-iB-7j0"/>
+                                    <constraint firstItem="fZO-8t-WZ9" firstAttribute="centerX" secondItem="wLo-LR-jb0" secondAttribute="centerX" id="9LS-4o-nNz"/>
+                                    <constraint firstItem="ZVN-3h-Ckh" firstAttribute="centerX" secondItem="mw5-e8-Ofb" secondAttribute="centerX" id="9S1-SQ-Ybz"/>
+                                    <constraint firstItem="GPg-Vq-BXT" firstAttribute="top" secondItem="6N5-SL-toK" secondAttribute="top" constant="9" id="Isw-ki-B5N"/>
+                                    <constraint firstItem="cTn-cR-bun" firstAttribute="top" secondItem="ZVN-3h-Ckh" secondAttribute="bottom" id="J8m-0y-50D"/>
+                                    <constraint firstItem="GPg-Vq-BXT" firstAttribute="leading" secondItem="6N5-SL-toK" secondAttribute="leading" constant="16" id="LuP-lx-uhl"/>
+                                    <constraint firstItem="ZVN-3h-Ckh" firstAttribute="width" secondItem="6N5-SL-toK" secondAttribute="width" multiplier="0.3" id="Mlo-cS-y0G"/>
+                                    <constraint firstItem="nmZ-Pd-AC0" firstAttribute="centerX" secondItem="wLo-LR-jb0" secondAttribute="centerX" id="Nih-7z-W4L"/>
+                                    <constraint firstItem="fZO-8t-WZ9" firstAttribute="width" secondItem="6N5-SL-toK" secondAttribute="width" multiplier="0.3" id="QVx-2L-LVW"/>
+                                    <constraint firstItem="fZO-8t-WZ9" firstAttribute="top" secondItem="nmZ-Pd-AC0" secondAttribute="bottom" id="RDq-Ah-9yP"/>
+                                    <constraint firstItem="mw5-e8-Ofb" firstAttribute="top" secondItem="IOE-76-Xki" secondAttribute="bottom" constant="16" id="ZPB-Ax-g2G"/>
+                                    <constraint firstItem="IOE-76-Xki" firstAttribute="leading" secondItem="GPg-Vq-BXT" secondAttribute="leading" id="h06-XR-Dsp"/>
+                                    <constraint firstItem="IOE-76-Xki" firstAttribute="trailing" secondItem="GPg-Vq-BXT" secondAttribute="trailing" constant="-251" id="jat-hk-VBx"/>
+                                    <constraint firstAttribute="trailing" secondItem="mw5-e8-Ofb" secondAttribute="trailing" constant="75" id="lin-W0-t6U"/>
+                                    <constraint firstItem="nmZ-Pd-AC0" firstAttribute="width" secondItem="6N5-SL-toK" secondAttribute="width" multiplier="0.3" id="mtC-Eu-73z"/>
+                                    <constraint firstItem="wLo-LR-jb0" firstAttribute="leading" secondItem="6N5-SL-toK" secondAttribute="leading" constant="75" id="p0L-20-tFj"/>
+                                    <constraint firstItem="wLo-LR-jb0" firstAttribute="top" secondItem="IOE-76-Xki" secondAttribute="bottom" constant="16" id="rvU-e6-8s2"/>
+                                    <constraint firstItem="nmZ-Pd-AC0" firstAttribute="top" secondItem="wLo-LR-jb0" secondAttribute="bottom" constant="8" id="txo-2R-twI"/>
+                                    <constraint firstItem="ZVN-3h-Ckh" firstAttribute="top" secondItem="mw5-e8-Ofb" secondAttribute="bottom" constant="8" id="wSy-pT-G9t"/>
+                                    <constraint firstAttribute="height" constant="207" id="yKe-uQ-pVe"/>
+                                    <constraint firstItem="IOE-76-Xki" firstAttribute="top" secondItem="GPg-Vq-BXT" secondAttribute="bottom" constant="8" id="yTA-Rv-ZYd"/>
+                                    <constraint firstAttribute="trailing" secondItem="GPg-Vq-BXT" secondAttribute="trailing" constant="16" id="zAE-nt-rjm"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="cgf-gq-cy5"/>
+                        <constraints>
+                            <constraint firstItem="Ngd-Ju-Gdz" firstAttribute="trailing" secondItem="d7L-H4-IUO" secondAttribute="trailing" id="5Ox-hi-dbM"/>
+                            <constraint firstItem="Ngd-Ju-Gdz" firstAttribute="top" secondItem="d7L-H4-IUO" secondAttribute="top" id="8UT-qR-vvo"/>
+                            <constraint firstItem="6N5-SL-toK" firstAttribute="leading" secondItem="d7L-H4-IUO" secondAttribute="leading" id="AUx-Bm-2cT"/>
+                            <constraint firstItem="6N5-SL-toK" firstAttribute="top" secondItem="Ngd-Ju-Gdz" secondAttribute="bottom" id="DtP-NK-bIV"/>
+                            <constraint firstItem="Ngd-Ju-Gdz" firstAttribute="leading" secondItem="d7L-H4-IUO" secondAttribute="leading" id="RTF-6h-mKA"/>
+                            <constraint firstItem="6N5-SL-toK" firstAttribute="bottom" secondItem="d7L-H4-IUO" secondAttribute="bottom" id="me3-yY-WKV"/>
+                            <constraint firstItem="6N5-SL-toK" firstAttribute="trailing" secondItem="d7L-H4-IUO" secondAttribute="trailing" id="x1r-QL-jYE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="d7L-H4-IUO"/>
                     </view>
+                    <connections>
+                        <outlet property="availableBikesLabel" destination="fZO-8t-WZ9" id="DL1-bw-TJp"/>
+                        <outlet property="availablePlacesLabel" destination="cTn-cR-bun" id="22T-Ox-Tyn"/>
+                        <outlet property="distanceLabel" destination="IOE-76-Xki" id="2Dd-jF-lEb"/>
+                        <outlet property="idAndNameLabel" destination="GPg-Vq-BXT" id="4or-8H-wMU"/>
+                        <outlet property="mapView" destination="Ngd-Ju-Gdz" id="jyI-yr-r5s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="20M-o8-4t5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1118" y="63"/>
+            <point key="canvasLocation" x="1117.5999999999999" y="62.518740629685162"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WiV-dU-0fo">
@@ -67,5 +178,9 @@
             <point key="canvasLocation" x="-369" y="63"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bikeIcon" width="52" height="56"/>
+        <image name="lockIcon" width="49" height="59"/>
+    </resources>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
